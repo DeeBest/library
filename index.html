@@ -9,23 +9,40 @@
     <title>DeeBest's Library</title>
 </head>
 <body>
-    <header>
-        <div id="logo-container">
-            <img id="logo-image" src="eagle-png.webp" alt="logo image">
-            <h1>DeeBest's Library</h1>
-        </div>
-    </header>
-    <main>
-        <h1>Main Content</h1>
-    </main>
-    <footer>
-        <p>
-            Created By Simphiwe 
-            <script>
-            document.write(new Date().getFullYear());
-            </script>
-        </p>
-    </footer>
+    <div id="app-container">
+        <header>
+            <div id="logo-container">
+                <img id="logo-image" src="eagle-png.webp" alt="logo image">
+                <h1>DeeBest's Library</h1>
+            </div>
+        </header>
+        <main>
+            <form action="#">
+                <label for="title">Title
+                    <input type="text" id="title" placeholder="Title Of The Book" required>
+                </label>
+                <label for="author">Author
+                    <input type="text" id="author" required placeholder="Author Of The Book">
+                </label>
+                <label for="pages">Pages
+                    <input type="number" id="pages" required placeholder="Total Pages Of The Book">
+                </label>
+                <div id="readStatusDiv">
+                    <span>Have you read the book?</span>
+                        <input type="checkbox" name="readStatus" id="readStatus">
+                </div>
+                <button id="add-book-btn">+Add Book</button>
+            </form>
+        </main>
+        <footer>
+            <p>
+                Created By Simphiwe
+                <script>
+                document.write(new Date().getFullYear());
+                </script>
+            </p>
+        </footer>
+    </div>
     
 </body>
 </html>
