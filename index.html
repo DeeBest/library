@@ -14,26 +14,22 @@
             <h1>DeeBest Library</h1>
         </div>
     </header>
-    <main id="container">
-        <form action="#">
-            <label for="title">Title
-                <input type="text" id="title" placeholder="Title Of The Book" required>
-            </label>
-            <label for="author">Author
-                <input type="text" id="author" required placeholder="Author Of The Book">
-            </label>
-            <label for="pages">Pages
-                <input type="number" id="pages" required placeholder="Total Pages Of The Book">
-            </label>
-            <div id="read-the-book-div">
-                <span>Have you read the book?</span>
-                    <input type="checkbox" id="readStatus" required>
-            </div>
-            <button id="add-book-btn">+Add Book</button>
+    <main id="container" style="text-align: center;">
+        <button id="add-book-btn">Add Book</button>
+        <form id="my-form" style="display: none;">
+            <label for="book-name">Book Name:</label>
+                <input type="text" id="book-name" name="book-name"><br>
+            <label for="author-name">Author Name:</label>
+                <input type="text" id="author-name" name="author-name"><br>
+            <label for="book-pages">Number of Pages:</label>
+                <input type="number" id="book-pages" name="book-pages"><br>
+            <label for="book-read">Read:</label>
+                <input type="checkbox" id="book-read" name="book-read"><br>
+            <button id="submit-btn" type="submit">Submit</button>
         </form>
         <div id="books-container"></div>
     </main>
-    <footer>
+    <footer id="footer">
         <p>Created by Simphiwe <script>document.write(new Date().getFullYear())</script>.</p>
     </footer>
 </body>
