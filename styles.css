@@ -115,11 +115,11 @@ span {
     border-radius: 5px;
     text-align: center;
 }
-footer {
+/* footer {
     display: flex;
     align-items: center;
     justify-content: start;
-}
+} */
 @media (max-width: 600px){
     #container {
         display: grid;
