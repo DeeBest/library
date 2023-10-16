@@ -4,45 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-    <title>DeeBest's Library</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="app-container">
-        <header>
-            <div id="logo-container">
-                <img id="logo-image" src="eagle-png.webp" alt="logo image">
-                <h1>DeeBest's Library</h1>
+    <header>
+        <div id="title-div">
+            <h1>DeeBest Library</h1>
+        </div>
+    </header>
+    <main id="container">
+        <form action="#">
+            <label for="title">Title
+                <input type="text" id="title" placeholder="Title Of The Book" required>
+            </label>
+            <label for="author">Author
+                <input type="text" id="author" required placeholder="Author Of The Book">
+            </label>
+            <label for="pages">Pages
+                <input type="number" id="pages" required placeholder="Total Pages Of The Book">
+            </label>
+            <div id="read-the-book-div">
+                <span>Have you read the book?</span>
+                    <input type="checkbox" id="readStatus" required>
             </div>
-        </header>
-        <main>
-            <form action="#">
-                <label for="title">Title
-                    <input type="text" id="title" placeholder="Title Of The Book" required>
-                </label>
-                <label for="author">Author
-                    <input type="text" id="author" required placeholder="Author Of The Book">
-                </label>
-                <label for="pages">Pages
-                    <input type="number" id="pages" required placeholder="Total Pages Of The Book">
-                </label>
-                <div id="readStatusDiv">
-                    <span>Have you read the book?</span>
-                        <input type="checkbox" name="readStatus" id="readStatus">
-                </div>
-                <button id="add-book-btn">+Add Book</button>
-            </form>
-        </main>
-        <footer>
-            <p>
-                Created By Simphiwe
-                <script>
-                document.write(new Date().getFullYear());
-                </script>
-            </p>
-        </footer>
-    </div>
-    
+            <button id="add-book-btn">+Add Book</button>
+        </form>
+        <div id="books-container"></div>
+    </main>
+    <footer>
+        <p>Created by Simphiwe <script>document.write(new Date().getFullYear())</script>.</p>
+    </footer>
 </body>
 </html>
