@@ -6,10 +6,23 @@
     font-size: 1.15rem;
 }
 h1{
-    font-size: 3rem;
+    font-size: 2rem;
+}
+html, body {
+    height: 100%;
 }
 body {
     background: rgba(207, 207, 242, 0.689);
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 #title-div {
     display: flex;
@@ -26,9 +39,14 @@ body {
     background-color: cadetblue;
     color: aliceblue;
     height: 10vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 #container {
     height: 70vh;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
     
 }
 #add-book-btn {
@@ -80,11 +98,15 @@ input {
     max-width: 100%;
     box-sizing: border-box;
     border-radius: 10px;
+    display: inline-block;
   }
 #form-label {
     margin-bottom: 10px;
 }
-@media (max-width: 600px){
+@media only screen and (max-width: 600px){
+    #my-form {
+        width: 100%;
+    }
     #container {
         display: grid;
         grid-template-columns: 1fr;
