@@ -16,27 +16,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
     background-color: aliceblue;
     color: cadetblue;
+    height: 20vh;
 }
 #footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
     background-color: cadetblue;
     color: aliceblue;
+    height: 10vh;
 }
-/* #container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    width: 100%;
-    height: 100%;
+#container {
+    height: 70vh;
     
-} */
+}
 #add-book-btn, #submit-btn {
     padding: 0.25rem;
     margin: 0.25rem;
@@ -115,11 +110,6 @@ span {
     border-radius: 5px;
     text-align: center;
 }
-/* footer {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-} */
 @media (max-width: 600px){
     #container {
         display: grid;
