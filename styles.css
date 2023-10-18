@@ -61,12 +61,11 @@ main {
     font-weight: 550;
     font-size: 15px;
     transition: background-color 0.9s ease;
+    cursor: pointer;
 }
 #add-book-btn:hover {
     background: cadetblue;
     color: aliceblue;
-    width: 12rem;
-    height: 3rem;
 }
 #submit-btn {
     padding: 0.25rem;
@@ -78,19 +77,41 @@ main {
     font-weight: 550;
     font-size: 15px;
     transition: background-color 0.9s ease;
+    cursor: pointer;
 }
 #submit-btn:hover {
     background: cadetblue;
     color: aliceblue;
 }
+#close-form-btn {
+    width: 4rem;
+    height: 1.5rem;
+    background-color:  cadetblue;
+    color: aliceblue;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.9s ease;
+    padding: 0.25rem;
+    text-align: center;
+    margin: 1rem;
+    align-self: flex-end;
+    font-weight: 550;
+    font-size: 15px;
+    border: none;
+}
+#close-form-btn:hover {
+    background: aliceblue;
+    color: cadetblue;
+}
 #my-form {
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     background-color: rgb(200, 226, 226);
     width: 50%;
     margin: 2rem auto;
     border-radius: 15px;
     color: cadetblue;
     font-weight: 600;
+    box-sizing: border-box;
 }
 input {
     margin-bottom: 10px;
@@ -99,6 +120,7 @@ input {
     box-sizing: border-box;
     border-radius: 10px;
     display: inline-block;
+    border: none;
   }
 #form-label {
     margin-bottom: 10px;
