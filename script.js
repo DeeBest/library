@@ -7,6 +7,9 @@ const addBookBtn = document.getElementById('add-book-btn');
       addBookBtn.addEventListener('click', () => {
   if (myForm.style.display === 'none') {
     myForm.style.display = 'block';
+    //
+      myForm.ATTRIBUTE_NODE.classList.add('active');
+    //
     addBookBtn.style.display = 'none';
     booksContainer.style.display = 'none';
   } else {
