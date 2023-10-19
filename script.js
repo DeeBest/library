@@ -13,6 +13,14 @@ const addBookBtn = document.getElementById('add-book-btn');
     myForm.style.display = 'none';
   }
 });
+//   // Get the close form button element
+const closeFormBtn = document.getElementById('close-form-btn');
+      closeFormBtn.addEventListener('click', () => {
+      myForm.style.display = 'none';
+      addBookBtn.style.display = 'block';
+      booksContainer.style.display = 'grid';
+});
+
 //function for creating a new book 
 function Book(title,author,pages,readStatus)  {
     this.title      = title
@@ -67,7 +75,7 @@ function displayLibrary() {
       //adding the status button to the book element
       bookElement.appendChild(statusButton);
       // Create a new delete button element
-      const deleteButtonElement = document.createElement('button');
+const deleteButtonElement = document.createElement('button');
       deleteButtonElement.classList.add('book-btn');
       deleteButtonElement.textContent = 'Delete';
       deleteButtonElement.addEventListener('click', () => {
@@ -135,64 +143,14 @@ myForm.addEventListener('submit', (event) => {
     alert('Please fill out all the required fields.');
   }
 });
-// function addBookToLibrary() {
-//     // Get the values of the user inputs
-//     const title = document.getElementById('book-name').value;
-//     const author = document.getElementById('author-name').value;
-//     const pages = document.getElementById('book-pages').value;
-//     const readStatus = document.getElementById('read-status').checked;
-  
-//     // Create a new book object
-//     const book = {
-//       title: title,
-//       author: author,
-//       pages: pages,
-//       readStatus: readStatus
-//     };
-  
-//     // Add the book object to the library array
-//     myLibrary.push(book);
-//   }
-  
-
-
-//   // Get the close form button element
-const closeFormBtn = document.getElementById('close-form-btn');
-
-// // Add a click event listener to the close form button
-closeFormBtn.addEventListener('click', () => {
-  // Get the form element
-  const myForm = document.getElementById('my-form');
-  // Remove the form element from the DOM
-  myForm.remove();
-  // Show the add book button and the books container
-  addBookBtn.style.display = 'block';
-  booksContainer.style.display = 'grid';
-});
-//////////////////////////////////////////
 // Get the submit button element
 const submitButton = document.getElementById('submit-btn');
-// Add a click event listener to the submit button
-submitButton.addEventListener('click', (event) => {
-  // Prevent the default form submission behavior
-  event.preventDefault();
-  // Call the addBookToLibrary function to add the new book to the library
-  addBookToLibrary();
-  // Call the displayLibrary function to display the library
-  displayLibrary();
-});
-// // Add a click event listener to the button
-addBookBtn.addEventListener('click', () => {
-//   Toggle the visibility of the form and the button
-  if (myForm.style.display === 'none') {
-    myForm.style.display = 'block';
-    addBookBtn.style.display = 'none';
-  } else {
-    myForm.style.display = 'none';
-    addBookBtn.style.display = 'block';
-  }
+      submitButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      addBookToLibrary();
+      displayLibrary();
 });
     // Call the displayLibrary function when the page loads
-window.addEventListener('load', () => {
-    displayLibrary();
-  });
+// window.addEventListener('load', () => {
+//     displayLibrary();
+//   });
