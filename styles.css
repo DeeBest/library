@@ -52,18 +52,17 @@ body {
     display: grid;
     display: none;
     height: 80%;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     width: 90%;
     margin: 1rem;
     justify-content: center;
     align-content: center;
-    /* z-index: 1; */
   }
   
 .book {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     background-color: cadetblue;
     color: aliceblue;
@@ -71,13 +70,14 @@ body {
     margin: 1rem;
     box-sizing: border-box;
     border-radius: 0.5rem;
-    align-items: flex-start;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* z-index: 1; */
       
   }
+.titleElement {
+    margin-top: 0.5rem;
+}
 .book-btn {
     padding: 0.25rem;
     width: 10rem;

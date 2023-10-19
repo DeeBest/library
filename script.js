@@ -7,13 +7,15 @@ const addBookBtn = document.getElementById('add-book-btn');
       addBookBtn.addEventListener('click', () => {
   if (myForm.style.display === 'none') {
     myForm.style.display = 'block';
-    addBookBtn.style.display = 'none'
+    addBookBtn.style.display = 'none';
+    booksContainer.style.display = 'none';
   } else {
     addBookBtn.style.display = 'block';
     myForm.style.display = 'none';
+    booksContainer.style.display = 'grid';
   }
 });
-//   // Get the close form button element
+   // Get the close form button element
 const closeFormBtn = document.getElementById('close-form-btn');
       closeFormBtn.addEventListener('click', () => {
       myForm.style.display = 'none';
@@ -42,43 +44,44 @@ function displayLibrary() {
     for (let i = 0; i < myLibrary.length; i++) {
       // Create a new book element
       const bookElement = document.createElement('div');
-      bookElement.classList.add('book');
+            bookElement.classList.add('book');
       // Create a new title element
       const titleElement = document.createElement('p');
-      titleElement.textContent = 'Book' + ' Name: ' + myLibrary[i].title;
-      bookElement.appendChild(titleElement);
+            titleElement.classList.add('titleElement');
+            titleElement.textContent = 'Book' + ' Name: ' + myLibrary[i].title;
+            bookElement.appendChild(titleElement);
       // Create a new author element
       const authorElement = document.createElement('p');
-      authorElement.textContent = 'Author: ' + myLibrary[i].author;
-      bookElement.appendChild(authorElement);
+            authorElement.textContent = 'Author: ' + myLibrary[i].author;
+            bookElement.appendChild(authorElement);
       // Create a new pages element
       const pagesElement = document.createElement('p');
-      pagesElement.textContent = 'Pages: ' + myLibrary[i].pages;
-      bookElement.appendChild(pagesElement);
+            pagesElement.textContent = 'Pages: ' + myLibrary[i].pages;
+            bookElement.appendChild(pagesElement);
       // Create a new status element
       const statusElement = document.createElement('p');
-      statusElement.textContent = 'Status: ' + myLibrary[i].readStatus;
-      bookElement.appendChild(statusElement);
+            statusElement.textContent = 'Status: ' + myLibrary[i].readStatus;
+            bookElement.appendChild(statusElement);
       //Creating a button that will toggle the book read status
       const statusButton = document.createElement('button');
-      statusButton.classList.add('book-btn');
-      statusButton.textContent = 'Change read status';
+            statusButton.classList.add('book-btn');
+            statusButton.textContent = 'Change read status';
       //adding event listener to the read status button
-      statusButton.addEventListener('click', () => {
-        if (bookElement.readStatus === 'Read') {
-          bookElement.readStatus = 'Unread';
-        } else {
-          bookElement.readStatus = 'Read';
-        }
+            statusButton.addEventListener('click', () => {
+                if (bookElement.readStatus === 'Read') {
+                    bookElement.readStatus = 'Unread';
+                } else {
+                        bookElement.readStatus = 'Read';
+                }
         statusElement.textContent = `Status: ${bookElement.readStatus}`;
       }); 
       //adding the status button to the book element
       bookElement.appendChild(statusButton);
       // Create a new delete button element
-const deleteButtonElement = document.createElement('button');
-      deleteButtonElement.classList.add('book-btn');
-      deleteButtonElement.textContent = 'Delete';
-      deleteButtonElement.addEventListener('click', () => {
+        const deleteButtonElement = document.createElement('button');
+              deleteButtonElement.classList.add('book-btn');
+              deleteButtonElement.textContent = 'Delete';
+              deleteButtonElement.addEventListener('click', () => {
         // Remove the book from the library array
         myLibrary.splice(i, 1);
         // Call the displayLibrary function to update the DOM
@@ -89,7 +92,6 @@ const deleteButtonElement = document.createElement('button');
       booksContainer.appendChild(bookElement);
     }
     addBookBtn.style.display = 'block';
-    // myForm.style.display = 'none';
     myForm.reset();
   }
 
@@ -106,51 +108,25 @@ function addBookToLibrary() {
     // Call the displayLibrary function to display the library
     displayLibrary();
   }
-  
-// // // Add a submit event lister to the form
-myForm.addEventListener('submit', (event) => {
-// //     // hide the form and show the add book button
-    myForm.style.display = 'none';
-    addBookBtn.style.display = 'block';
-// //     // Prevent the default form submission behavior
-    event.preventDefault();
-// //     // Call the addBookToLibrary function to add the new book to the library
-    addBookToLibrary();
-    // Reset the form inputs
-    myForm.reset();
-});
+
 // Add a submit event listener to the form
 myForm.addEventListener('submit', (event) => {
   // Prevent the default form submission behavior
   event.preventDefault();
-
   // Check whether the form is valid
   if (myForm.checkValidity()) {
     // Call the addBookToLibrary function to add the new book to the library
     addBookToLibrary();
-
     // Call the displayLibrary function to display the library
     displayLibrary();
-
     // Reset the form inputs
     myForm.reset();
-
     // Hide the form and show the add book button
     myForm.style.display = 'none';
     addBookBtn.style.display = 'block';
+    booksContainer.style.display = 'grid';
   } else {
     // Display an error message to the user
     alert('Please fill out all the required fields.');
   }
 });
-// Get the submit button element
-const submitButton = document.getElementById('submit-btn');
-      submitButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      addBookToLibrary();
-      displayLibrary();
-});
-    // Call the displayLibrary function when the page loads
-// window.addEventListener('load', () => {
-//     displayLibrary();
-//   });
